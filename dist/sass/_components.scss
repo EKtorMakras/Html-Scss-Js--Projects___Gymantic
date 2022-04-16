@@ -1,0 +1,48 @@
+// * --------------- Buttons --------------- * //
+
+.btn {
+
+    //^ Generic buttons //
+
+    &,
+    &:link,
+    &:visited {
+        @include transition(.2s, ease);
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 1.5rem 4rem;
+
+        background-color: greenyellow;
+        color: #fff;
+
+        font-size: $fnt-default;
+        letter-spacing: $spacing;
+
+        border-radius: 20rem;
+        box-shadow: $shadow-light-1;
+        border: none;
+        cursor: pointer;
+    }
+
+    &:active,
+    &:focus {
+        // transform: translateY(1px);
+        // background-color: red;
+        box-shadow: $shadow-dark-1;
+        outline: none;
+    }
+
+    &:hover {
+        background-color: coral;
+    }
+}
+
+// * --------------- --------------- * //
+
+
+
+// * --------------- Buttons --------------- * //
+
+
+
+// * --------------- --------------- * //

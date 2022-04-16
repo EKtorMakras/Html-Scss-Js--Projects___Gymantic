@@ -1,0 +1,163 @@
+.showcase {
+  // background-color: var(--color-tertiary);
+  grid-column: container-start / container-end;
+  background-image: linear-gradient(
+      var(--color-tertiary-m),
+      var(--color-tertiary-m)
+    ),
+    url("../img/showcase/showcase-bg.jpg");
+  @extend %bg;
+  @extend %sec-padding;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &--title {
+      text-align: center;
+      font-size: font-size(font-size-large);
+      font-weight: font-weight(font-weight-light);
+      background-image: linear-gradient(
+        135deg,
+        var(--color-secondary),
+        var(--color-quinary)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
+
+    &--para {
+      font-size: font-size(font-size-regular);
+      font-weight: font-weight(font-weight-light);
+      color: var(--color-quinary);
+      margin-bottom: calc(1rem + 2vw);
+    }
+
+    &--links {
+      display: flex;
+      justify-content: center;
+
+      a:link,
+      a:visited {
+        font-size: font-size(font-size-small);
+        padding: calc(0.5rem + 1vh) calc(1rem + 1vw);
+        text-transform: uppercase;
+        position: relative;
+        border-radius: 0.5rem;
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+      }
+
+      a:link:first-child,
+      a:visited:first-child {
+        background-color: var(--color-tertiary);
+        border: 0.2rem solid var(--color-tertiary);
+        color: var(--color-quinary);
+        margin-right: calc(1rem + 2vw);
+      }
+
+      a:link:last-child,
+      a:visited:last-child {
+        background-color: var(--color-secondary);
+        border: 0.2rem solid var(--color-secondary);
+        color: var(--color-quinary);
+      }
+
+      a:link:first-child::before,
+      a:visited:first-child::before,
+      a:link:last-child::before,
+      a:visited:last-child::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--color-quinary);
+        border-radius: inherit;
+        z-index: -1;
+        transform: scale(0);
+        transition: all 0.5s ease-in-out;
+      }
+
+      a:hover:first-child::before,
+      a:active:first-child::before,
+      a:hover:last-child::before,
+      a:active:last-child::before {
+        transform: scale(1);
+      }
+
+      a:hover:first-child,
+      a:active:first-child {
+        color: var(--color-secondary);
+      }
+
+      a:hover:last-child,
+      a:active:last-child {
+        color: var(--color-tertiary);
+      }
+    }
+  }
+
+  //*-*-*-*-*-*-*-*-*-*-- The 800px Mark Break Point *-*-*-*-*-*-*-*-*-*-*
+  @include media-tablet {
+    &__content {
+      &--title {
+        text-align: left;
+      }
+
+      &--links {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  //*-*-*-*-*-*-*-*-*-*-- The 600px Mark Break Point *-*-*-*-*-*-*-*-*-*-*
+  @include media-medium {
+    padding: 4rem;
+
+    &__content {
+      &--title {
+        font-size: font-size(font-size-xlarge);
+        font-weight: font-weight(font-weight-regular);
+      }
+
+      &--para {
+        font-size: 2rem;
+      }
+
+      &--links {
+        a:link,
+        a:visited {
+          font-size: font-size(font-size-small);
+        }
+      }
+    }
+  }
+
+  //*-*-*-*-*-*-*-*-*-*-- The 400px Mark Break Point *-*-*-*-*-*-*-*-*-*-*
+  @include media-small {
+    &__content {
+      &--links {
+        flex-direction: column;
+        align-items: flex-start;
+
+        a:link,
+        a:visited {
+          display: inline-block;
+        }
+
+        a:link:first-child,
+        a:visited:first-child {
+          margin-bottom: 5vw;
+        }
+      }
+    }
+  }
+}

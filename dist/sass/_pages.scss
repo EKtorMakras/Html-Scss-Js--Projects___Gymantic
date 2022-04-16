@@ -1,0 +1,202 @@
+// * ---------------  Home --------------- * //
+
+
+//$ ---------------- Showcase/Hero Section ---------------- $//
+
+.showcase {
+
+    background-color: tan;
+    grid-column: container-start/container-end;
+
+    &__content {}
+
+
+    &__title {}
+
+
+    &__para {}
+
+
+    &__links {}
+
+    &__link {}
+
+}
+
+//$ ---------------- End Of Showcase/Hero Section ---------------- $//
+
+
+
+//$ ---------------- Motto Section ---------------- $//
+
+.motto {
+
+    background-color: rebeccapurple;
+    grid-column: container-start/container-end;
+
+    &__content {}
+
+    &__title {}
+
+    &__para {}
+
+    &__link {}
+
+}
+
+//$ ---------------- End Of Motto Section ---------------- $//
+
+
+
+//$ ---------------- Features Section ---------------- $//
+
+.features {
+
+    background-color: crimson;
+    grid-column: container-start/container-end;
+}
+
+
+.feature {
+
+    &__title {}
+
+
+    &__para {}
+
+
+    &__link {}
+
+}
+
+//$ ---------------- End Of Features Section ---------------- $//
+
+
+//$ ---------------- Trainers Section ---------------- $//
+
+.trainers {
+
+    background-color: cyan;
+    grid-column: center-start/center-end;
+
+    &__title {}
+
+
+    &__content {}
+
+
+    &__card {
+
+
+        &__specialty {}
+
+        &__name {}
+
+        &__img {}
+
+    }
+
+}
+
+//$ ---------------- End Of Trainers Section ---------------- $//
+
+
+//$ ---------------- Testimonials Section ---------------- $//
+
+.testimonials {
+
+    background-color: rgb(20, 20, 220);
+    grid-column: container-start/container-end;
+
+    &__title {}
+
+
+    &__content {}
+
+
+    &__slide {
+
+        &-para {}
+
+        &-title {}
+    }
+
+
+    &__indicator {
+
+        &-img {}
+    }
+}
+
+//$ ---------------- End Of Testimonials Section ---------------- $//
+
+
+
+//$ ---------------- Clients Section ---------------- $//
+
+.clients {
+
+    background-color: grey;
+    grid-column: container-start/container-end;
+
+    &__title {}
+
+    &__content {}
+
+    &__img {}
+}
+
+//$ ---------------- End Of Clients Section ---------------- $//
+
+
+
+//$ ---------------- Scroll-To-Top Button ---------------- $//
+
+.scroll {}
+
+//$ ---------------- End Of Scroll-To-Top Button ---------------- $//
+
+
+
+//$ ---------------- Register Section ---------------- $//
+
+.register {
+
+    background-color: rgb(137, 177, 16);
+    grid-column: container-start/container-end;
+
+
+    //% ------ Register Progress ------ //
+    &__progress {
+
+
+        &-step {}
+
+        &-icon {}
+    }
+
+
+    //% ------ Register Content ------ //
+    &__content {}
+
+
+    &__form {
+
+
+        &-page {}
+
+        &-group {}
+
+        &-label {}
+
+        &-input {}
+
+
+    }
+
+}
+
+//$ ---------------- End Of Register Section ---------------- $//
+
+
+// * --------------- --------------- * //

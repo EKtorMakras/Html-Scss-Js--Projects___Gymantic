@@ -1,0 +1,302 @@
+.header {
+  // background-color: var(--color-secondary);
+  grid-column: container-start / container-end;
+  // height: 600px;
+
+  // Dynamic Class => is toggled using JavaScript
+  // Middle Line
+  &.open .header__menu--line {
+    background-color: transparent;
+  }
+
+  &.open .header__menu--line::before {
+    transform: rotate(45deg);
+  }
+
+  &.open .header__menu--line::after {
+    transform: rotate(-45deg);
+  }
+
+  &.open .header__menu--line::before,
+  &.open .header__menu--line::after {
+    top: 0;
+  }
+
+  &__overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-tertiary);
+    position: fixed;
+    opacity: 0;
+    display: none;
+    z-index: 10;
+  }
+
+  &__nav {
+    width: 100%;
+    height: 7rem;
+    line-height: 7rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--color-primary);
+    text-transform: uppercase;
+    overflow: hidden;
+
+    &--logo {
+      padding: 1rem;
+      img {
+        height: 5rem;
+        width: 5rem;
+      }
+    }
+
+    &--links {
+      display: flex;
+
+      &__item {
+        a:link,
+        a:visited {
+          margin-right: 2vw;
+          padding: 0 1.5rem;
+          display: block;
+          position: relative;
+          transform-style: preserve-3d;
+          transform-origin: top;
+          transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+
+        a:hover,
+        a:active {
+          transform: rotateX(90deg);
+        }
+
+        a:link::after,
+        a:visited::after {
+          content: attr(data-text);
+          position: absolute;
+          background-color: var(--color-tertiary);
+          left: 0;
+          bottom: -100%;
+          transform: rotateX(-90deg);
+          transform-origin: top;
+          padding: inherit;
+        }
+      }
+
+      // direction => downwards
+      &__item:nth-child(odd) {
+        animation: downwards 1s forwards;
+      }
+
+      // direction => upwards
+      &__item:nth-child(even) {
+        animation: upwards 1s forwards;
+      }
+
+      // Dark Mode Toggle Button
+      &__toggle-container {
+        display: flex;
+        align-items: center;
+
+        input[type="checkbox"] {
+          cursor: pointer;
+          position: relative;
+          width: 6rem;
+          height: 3rem;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-color: var(--color-quinary);
+          border-radius: 2.5rem;
+          box-shadow: inset 0 0 0.6rem 0.1rem rgb(158, 157, 157);
+          transition: all 0.5s ease-in-out;
+        }
+
+        input:checked[type="checkbox"] {
+          background-color: greenyellow;
+        }
+
+        input:not(:checked)[type="checkbox"] {
+          background-color: var(--color-tertiary);
+        }
+
+        input[type="checkbox"]::before,
+        input[type="checkbox"]::after {
+          content: "";
+          position: absolute;
+          top: 0.8rem;
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          background-color: var(--color-quinary);
+          box-shadow: 0 0.1rem 0.3rem 0.1rem hsla(0, 0%, 50%, 0.35);
+          transition: all 0.5s ease-in-out;
+        }
+
+        input[type="checkbox"]::before {
+          left: 0.5rem;
+        }
+
+        input[type="checkbox"]::after {
+          right: 0.5rem;
+        }
+
+        input:checked[type="checkbox"]::before {
+          left: 37%;
+          box-shadow: none;
+        }
+
+        input:checked[type="checkbox"]::after {
+          right: 38%;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  //*-*-*-*-*-*-*-*-*-*-- The 1300px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+  @include media-desktop {
+    &__nav {
+      &--links {
+        &__item {
+          a:link,
+          a:visited {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+  }
+
+  //*-*-*-*-*-*-*-*-*-*-- The 800px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+
+  @include media-tablet {
+    &__nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 25rem;
+      height: 100vh;
+      line-height: initial;
+      flex-direction: column;
+      text-align: center;
+      z-index: 20;
+      transform: perspective(70rem) rotateY(180deg);
+      transform-origin: top left;
+      transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+      &--links {
+        height: 80%;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        &__item {
+          animation: initial;
+
+          a:link,
+          a:visited {
+            transform-origin: left;
+            margin-right: initial;
+            padding: 2rem;
+            font-size: 1.2rem;
+          }
+
+          a:hover,
+          a:active {
+            transform: rotateY(90deg);
+          }
+
+          a:link::after,
+          a:visited::after {
+            top: 0;
+            bottom: 100%;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+          }
+        }
+
+        &__toggle-container {
+          justify-content: center;
+        }
+      }
+    }
+
+    &.open nav {
+      transform: rotateY(0);
+    }
+
+    &__menu {
+      position: fixed;
+      height: 4rem;
+      width: 4rem;
+      top: 2rem;
+      right: 2rem;
+      padding: 2.5rem;
+      // background-color: var(--color-primary);
+      z-index: 20;
+      cursor: pointer;
+
+      &--line,
+      &--line::before,
+      &--line::after {
+        content: "";
+        position: absolute;
+        width: 3.5rem;
+        height: 0.2rem;
+        background-color: var(--color-quinary);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: all 0.5s ease-in-out;
+      }
+
+      &--line::before {
+        top: -2.2rem;
+      }
+
+      &--line::after {
+        top: 1.3rem;
+      }
+    }
+
+    &__overlay.open {
+      display: block;
+      opacity: 0.8;
+    }
+  }
+}
+
+// Upwards
+@keyframes upwards {
+  // Starting point
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  // Ending Point
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Downwards
+@keyframes downwards {
+  // Starting point
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  // Ending Point
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

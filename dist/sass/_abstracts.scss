@@ -1,0 +1,444 @@
+// * --------------- Variables--------------- * //
+
+//& ----- COLORS ----- //
+
+$clr-black:#000;
+$clr-white:#fff;
+$clr-red-dark: #842029;
+$clr-red-light: #f8d7da;
+$clr-grey-dark: #0f5132;
+$clr-green-light: #d1e7dd;
+
+
+//% Shades Of Grey //
+
+/* General ones */
+
+$clr-grey-generic-1:#777;
+$clr-grey-generic-2:#999;
+$clr-grey-generic-3:#333;
+
+
+
+/* darkest grey - used for headings */
+$clr-grey-dark-1: #0f172a;
+$clr-grey-dark-2: #1e293b;
+$clr-grey-dark-3: #102a42;
+$clr-grey-dark-4: #243a52;
+$clr-grey-dark-5: #334155;
+$clr-grey-dark-6: #324d67;
+$clr-grey-dark-7: #475569;
+
+
+
+/* lighter grey - used for paragraphs */
+$clr-grey-light-1: #64748B;
+$clr-grey-light-2: #617d98;
+$clr-grey-light-3: #829ab0;
+$clr-grey-light-4: #94aeb8;
+$clr-grey-light-5: #bcccdc;
+$clr-grey-light-6: #dae2ec;
+$clr-grey-light-7: #e2e8f0;
+$clr-grey-light-8: #f1f5f9;
+$clr-grey-light-9: #f1f5f8;
+
+//% --- //
+
+
+
+// Light Color Palette (Custom Properties)
+html {
+    --color-primary: hsl(87, 98%, 34%);
+    --color-primary-m: hsla(87, 100%, 45%, 0.55);
+
+    --color-secondary: hsl(274, 99%, 72%);
+    --color-secondary-m: hsl(274, 99%, 72%, 0.6);
+
+    --color-tertiary: hsl(185, 36%, 47%);
+    --color-tertiary-m: rgba(38, 52, 65, 0.65);
+
+    --color-quaternary: rgb(255, 235, 153);
+    --color-quaternary-m: rgba(192, 162, 43, 0.65);
+
+    --color-quinary: white;
+    --color-quinary-m: rgba(255, 255, 255, 0.5);
+}
+
+
+// Dark Color Palette (Custom Properties)
+html[data-theme="dark"] {
+    --color-primary: rgb(36, 38, 43);
+    --color-primary-m: rgba(36, 38, 43, 0.65);
+
+    --color-secondary: rgb(124, 185, 8);
+    --color-secondary-m: rgba(123, 185, 8, 0.5);
+
+    --color-tertiary: rgb(38, 52, 65);
+    --color-tertiary-m: hsla(183, 34%, 38%, 0.65);
+
+    --color-quaternary: hsl(220, 10%, 28%);
+    --color-quaternary-m: hsla(220, 10%, 28%, 0.65);
+
+    --color-quinary: white;
+    --color-quinary-m: rgba(255, 255, 255, 0.5);
+}
+
+
+// //^ ---------- Light Theme ---------- //
+
+// //%  Primary Color //
+
+// $clr-primary:hsl(87, 98%, 34%);
+// $color-primary-m: hsla(87, 100%, 45%, 0.55);
+
+
+
+// //%  Secondary Color //
+
+// $color-secondary: hsl(274, 99%, 72%);
+// $color-secondary-m: hsl(274, 99%, 72%, 0.6);
+
+
+
+// //%  Tertiary Color //
+
+// $color-tertiary: hsl(185, 36%, 47%);
+// $color-tertiary-m: rgba(38, 52, 65, 0.65);
+
+
+
+// //%  Quaternary Color //
+
+// $color-quaternary: rgb(255, 235, 153);
+// $color-quaternary-m: rgba(192, 162, 43, 0.65);
+
+
+// //%  Quinary Color //
+
+// $color-quinary: white;
+// $color-quinary-m: rgba(255, 255, 255, 0.5);
+
+
+
+//& ----- ----- //
+
+
+
+//& ----- FONTS ----- //
+
+// Text
+$fnt-small-1:1.2rem;
+$fnt-small-2:1.4rem;
+$fnt-small-3:1.5rem;
+$fnt-default:1.6rem;
+$fnt-big-1:1.8rem;
+$fnt-big-2:1.9rem;
+$fnt-big-3:2rem;
+$fnt-big-4:2.2rem;
+
+
+// Headings
+$fnt-head-1:5rem;
+$fnt-head-2:4rem;
+$fnt-head-3:2.5rem;
+$fnt-head-4:1.8rem;
+
+
+$font-sizes: ( // 
+    "small": calc(1.2rem + 0.5vw),
+    "regular": calc(1.5rem + 1vw),
+    "medium": calc(1.5rem + 2vw),
+    "large": calc(1.5rem + 5vw),
+    "xlarge": calc(2.5rem + 5vw),
+);
+
+@function font-size($font-size-style) {
+    @return map-get($font-sizes, $font-size-style);
+}
+
+
+// Font Families
+$ff-primary: "Roboto",
+sans-serif;
+
+$ff-secondary : Arial,
+Helvetica,
+sans-serif;
+
+
+// Font Weight
+$font-weights: ( // 
+    "thin": 100,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+    "black": 900,
+);
+
+@function font-weight($font-weight-style) {
+    @return map-get($font-weights, $font-weight-style);
+}
+
+//& ----- ----- //
+
+
+
+//& ----- SHADOWS ----- //
+
+// Text
+$shadow-text-1: 0 3px 5px rgba($clr-black, .15);
+$shadow-text-2: 0 5px 7px rgba($clr-black, .15);
+$shadow-text-3: 0 7px 8px rgba($clr-black, .15);
+
+// Light
+$shadow-light-1: 0 .3rem .8rem rgba($clr-black, 0.1);
+$shadow-light-2: 0 .6rem 1rem rgba($clr-black, 0.1);
+$shadow-light-3: 0 1rem 1.5rem rgba($clr-black, 0.1);
+$shadow-light-4: 0 1.3rem 1.8rem rgba($clr-black, 0.1);
+$shadow-light-5: 0 1.7rem 2.3rem rgba($clr-black, 0.1);
+$shadow-light-6: 0 2rem 3rem rgba($clr-black, 0.1);
+
+// Medium
+$shadow-medium-1: 0 .3rem .8rem rgba($clr-black, 0.2);
+$shadow-medium-2: 0 .6rem 1rem rgba($clr-black, 0.2);
+$shadow-medium-3: 0 1rem 1.5rem rgba($clr-black, 0.2);
+$shadow-medium-4: 0 1.3rem 1.8rem rgba($clr-black, 0.2);
+$shadow-medium-5: 0 1.7rem 2.3rem rgba($clr-black, 0.2);
+$shadow-medium-6: 0 2rem 3rem rgba($clr-black, 0.2);
+
+// Dark
+$shadow-dark-1: 0 .3rem .8rem rgba($clr-black, 0.3);
+$shadow-dark-2: 0 .6rem 1rem rgba($clr-black, 0.3);
+$shadow-dark-3: 0 1rem 1.5rem rgba($clr-black, 0.3);
+$shadow-dark-4: 0 1.3rem 1.8rem rgba($clr-black, 0.3);
+$shadow-dark-5: 0 1.7rem 2.3rem rgba($clr-black, 0.3);
+$shadow-dark-6: 0 2rem 3rem rgba($clr-black, 0.3);
+
+//& ----- ----- //
+
+
+//& ----- OTHER----- //
+
+$spacing: 2.5px;
+$radius:3px;
+$transition:all .3s ease;
+$max-width: 1170px;
+
+//& ----- ----- //
+
+// * --------------- --------------- * //
+
+
+
+
+// * --------------- Mixins --------------- * //
+
+
+//%  General //
+
+// Clearfix
+@mixin clearfix {
+
+    &::after,
+    &::before {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+// Transition
+@mixin transition($time, $function) {
+    transition: all $time $function;
+}
+
+
+// Pseudo element
+@mixin pseudo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: $transition;
+}
+
+//% --- //
+
+
+
+//% --- Center an element --- //
+
+// Center with position //
+@mixin center-pos {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// Center with flexbox //
+@mixin flex($direction:row, $justifycontent:center, $alignitems:center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifycontent;
+    align-items: $alignitems;
+}
+
+@mixin center-flex {
+    display: flex;
+    place-items: center;
+    text-align: center;
+}
+
+
+// Center with margins //
+@mixin center-mar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//% --- --- //
+
+
+
+//% Shadows //
+
+@mixin shadow-box($blur, $op) {
+    box-shadow: 0 1rem $blur rgba($clr-black, $op);
+}
+
+@mixin shadow-text ($blur, $op) {
+    box-shadow: 0 .4rem $blur rgba($clr-black, $op);
+}
+
+//% --- //
+
+
+
+//% ---------- Media Queries ---------- //
+
+//@ ----- All Widths ----- //
+
+@mixin media-min ($width) {
+    @media screen and (min-width:$width) {
+        @content;
+    }
+}
+
+@mixin media-max ($width) {
+    @media screen and (max-width:$width) {
+        @content;
+    }
+}
+
+@mixin media-min-max($min-width, $max-width) {
+    @media screen and (min-width:$min-width) and (max-width:$max-width) {
+        @content;
+    }
+}
+
+//@ -----  ----- //
+
+
+//@ ----- Custom Widths ----- //
+
+
+$break-points: ( // 
+    "phone-small": 400px,
+    "phone-big": 600px,
+    "tab-port": 850px,
+    "tab-land": 1000px,
+    "desktop": 1300px,
+    "desktop-big": 1300px);
+
+@function break-points($break-point-limit) {
+    @return map-get($break-points, $break-point-limit);
+}
+
+
+@mixin respond($breakpoint) {
+
+    // 400px
+    @if $breakpoint==phone-small {
+        @media screen and (max-width:break-points(phone-small)) {
+            @content;
+        }
+    }
+
+
+    // 600px
+    @if $breakpoint==phone-big {
+        @media screen and (max-width:break-points(phone-big)) {
+            @content;
+        }
+    }
+
+
+    // 800px
+    @if $breakpoint==tab-port {
+        @media screen and (max-width:break-points(tab-port)) {
+            @content;
+        }
+    }
+
+
+    // 1000px
+    @if $breakpoint==tab-land {
+        @media screen and (min-width:break-points(tab-land)) {
+            @content;
+        }
+    }
+
+
+    // 1300px
+    @if $breakpoint==desktop {
+        @media screen and (min-width:break-points(desktop)) {
+            @content;
+        }
+    }
+
+
+    // 1800px
+    @if $breakpoint==desktop-big {
+        @media screen and (min-width:break-points(desktop-big)) {
+            @content;
+        }
+    }
+}
+
+//@ -----  ----- //
+
+
+//% ----------   ---------- //
+
+
+// * --------------- --------------- * //
+
+
+
+
+
+// ----------------------------------- Comments ----------------------------------- //
+
+//* ------------------------------ Header ------------------------------ *//
+//* ------------------------------ End Of Header ------------------------------ *//
+
+//$ ---------------- Showcase/Hero Section ---------------- $//
+//$ ---------------- End Of Showcase/Hero Section ---------------- $//
+
+//& ---------- Hero ---------- //
+//& ---------- End Of Hero ---------- //
+
+//% ------ Hero ------ //
+//% ------ End Of Hero ------ //
+
+//# ---- Hero ---- //
+//# ---- End Of Hero ---- //
+
+//^ -- Hero -- //
+//^ -- End Of Hero -- //

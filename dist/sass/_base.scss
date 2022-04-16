@@ -1,0 +1,221 @@
+// * --------------- Base --------------- * //
+
+//^ ---- Resets ---- //
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    font-size: 62.5%;
+
+
+    //# ---- Media ---- //
+
+    @include respond (desktop-big) {
+        font-size: 75%; // 1rem = 12px //
+    }
+
+    @include respond (tab-land) {
+        font-size: 56.25%; // 1rem = 9px //
+    }
+
+    @include respond (tab-port) {
+        font-size: 50%; // 1rem = 8px //
+    }
+
+    @include respond (phone-big) {
+        font-size: 43.75%; // 1rem = 7px //
+    }
+
+    //# ---- ---- //
+}
+
+//^ ---- ---- //
+
+
+
+//^ ---- Generic Styles ---- //
+
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+    transition: all .5s !important;
+    transition-delay: 0 !important;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--color-primary);
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: var(--color-quinary);
+    font-weight: font-weight(bold);
+    transition: $transition;
+    font-size: font-size(small);
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+i {
+    color: var(--color-primary);
+    font-size: font-size(medium);
+}
+
+//^ ---- ---- //
+
+
+// * --------------- --------------- * //
+
+
+
+// * --------------- Typography --------------- * //
+
+body {
+    font-family: $ff-primary;
+    font-size: $fnt-default;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+
+//^ --- Headings --- //
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: $spacing;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    color: $clr-grey-dark-3
+}
+
+
+h1 {
+    font-size: $fnt-head-1;
+    font-weight: 100;
+}
+
+
+h2 {
+    font-size: $fnt-head-2;
+    font-weight: 300;
+}
+
+
+h3 {
+    font-size: $fnt-head-3;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: $fnt-head-4;
+    font-weight: 300;
+}
+
+//^ --- --- // 
+
+
+
+//^ --- Other --- //`
+
+p {
+    font-size: $fnt-default;
+    line-height: 1.7;
+    color: $clr-grey-light-2;
+    margin-bottom: 1.25rem;
+    max-width: 40em;
+}
+
+
+.container {
+
+    display: grid;
+
+    grid-template-columns:
+        [container-start] 1fr [center-start] repeat(6,
+            [col-start] minmax(min-content, 16.6667rem) [col-end]) [center-end] 1fr [container-end];
+
+    grid-template-rows: min-content 90vh repeat(9, min-content);
+}
+
+//^ --- --- //
+
+
+// * --------------- --------------- * //
+
+
+
+// * --------------- Animations --------------- * //
+
+
+// * --------------- --------------- * //
+
+
+
+// * --------------- Utilities --------------- * //
+
+
+//^ ----- General ----- //
+
+// clearfix
+.clearfix {
+    @include clearfix;
+}
+
+
+// center text
+.u-center-text {
+    text-align: center;
+}
+
+
+// section set-up
+.section {
+    padding: 5rem 0;
+
+
+    &-center {
+        width: 90vw;
+        margin: 0 auto;
+        max-width: 1170px;
+
+        @include media-min(992px) {
+            width: 95vw;
+        }
+    }
+
+
+    &-title {
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+}
+
+
+//^ ----- ----- //
+
+// * --------------- --------------- * //

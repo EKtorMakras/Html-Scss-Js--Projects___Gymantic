@@ -1,0 +1,33 @@
+{
+  "name": "Set-up(small)",
+  "version": "1.0.0",
+  "description": "Set-up for small projects",
+  "main": "index.js",
+  "scripts": {
+
+    "watch:sass": "node-sass sass/style.scss css/style.css -w",
+    "devserver" : "live-server",
+    "start" : "npm-run-all --parallel devserver watch:sass",
+
+
+    "compile:sass": "node-sass sass/style.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css",
+    "build:css" : "npm-run-all compile:sass  prefix:css compress:css"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EKtorMakras/Set-up-big-"
+  },
+  "author": "Ektor",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.1",
+    "concat": "^1.0.3",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+"postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1"
+  }
+}
