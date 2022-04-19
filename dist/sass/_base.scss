@@ -53,6 +53,10 @@ html.transition *::after {
 body {
     overflow-x: hidden;
     background-color: var(--color-primary);
+    font-family: $ff-primary;
+    font-size: $fnt-default;
+    font-weight: 400;
+    line-height: 1.9;
 }
 
 
@@ -83,24 +87,9 @@ i {
     font-size: font-size(medium);
 }
 
-//^ ---- ---- //
 
+// Headings
 
-// * --------------- --------------- * //
-
-
-
-// * --------------- Typography --------------- * //
-
-body {
-    font-family: $ff-primary;
-    font-size: $fnt-default;
-    font-weight: 400;
-    line-height: 1.9;
-}
-
-
-//^ --- Headings --- //
 h1,
 h2,
 h3,
@@ -136,11 +125,7 @@ h4 {
     font-weight: 300;
 }
 
-//^ --- --- // 
 
-
-
-//^ --- Other --- //`
 
 p {
     font-size: $fnt-default;
@@ -160,26 +145,26 @@ p {
             [col-start] minmax(min-content, 16.6667rem) [col-end]) [center-end] 1fr [container-end];
 
     grid-template-rows: min-content 90vh repeat(9, min-content);
+
+
+    @include respond (tab-port) {
+        grid-template-rows: min-content 100vh repeat(9, min-content);
+    }
+}
+
+
+::selection {
+    background-color: var(--color-primary-m);
+    color: var(--color-quinary);
 }
 
 //^ --- --- //
-
-
-// * --------------- --------------- * //
-
-
-
-// * --------------- Animations --------------- * //
-
-
-// * --------------- --------------- * //
 
 
 
 // * --------------- Utilities --------------- * //
 
 
-//^ ----- General ----- //
 
 // clearfix
 .clearfix {
@@ -216,6 +201,46 @@ p {
 }
 
 
-//^ ----- ----- //
+
+// placeholder classes
+%bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+%padding-sec {
+    padding: 6vh 4vw;
+}
+
+
+%heading-sec {
+    font-size: font-size(medium);
+    font-weight: font-weight(light);
+    letter-spacing: 2px;
+    color: var(--color-quinary);
+}
+
+
+%h3-sec {
+    font-size: font-size(small);
+    color: var(--color-quinary);
+}
+
+
+%h4-sec {
+    color: var(--color-quinary);
+}
+
+
+%para-sec {
+    font-size: font-size(small);
+    font-family: $ff-secondary;
+    letter-spacing: 2px;
+    color: var(--color-quinary);
+}
+
+
 
 // * --------------- --------------- * //
