@@ -312,7 +312,7 @@
 
     grid-column: container-start/container-end;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
     padding: 0;
     background-color: $clr-grey-dark-2;
 }
@@ -563,6 +563,7 @@
             @extend %h3-sec;
             text-transform: capitalize;
             bottom: 28%;
+            text-align: left;
         }
 
 
@@ -620,26 +621,105 @@
 
 .testimonials {
 
-    background-color: rgb(20, 20, 220);
     grid-column: container-start/container-end;
+    background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/testimonials/testimonials-bg.jpg);
+    @extend %bg;
+    @extend %padding-sec;
 
-    &__title {}
 
 
-    &__content {}
+    &__title {
+        @extend %heading-sec;
+        margin-bottom: calc(2rem + 3vh);
+        text-align: center;
+    }
+
+
+    &__content {
+        max-width: 100rem;
+        @include center-mar;
+    }
+
+
+    &__slider {
+        border: 1px solid var(--color-quinary);
+        max-width: 60rem;
+        @include center-mar;
+        padding: 1.8rem 3rem;
+    }
 
 
     &__slide {
+        display: none;
 
-        &-para {}
 
-        &-title {}
+        &.active {
+            display: block;
+            animation: slide 1s linear;
+            -webkit-animation: slide 1s linear;
+        }
+
+
+        &-para {
+            @extend %para-sec;
+            margin-bottom: 3rem;
+            font-size: 1.4rem;
+        }
+
+        &-title {
+            @extend %h3-sec;
+        }
+
+
+        @keyframes slide {
+
+
+            0% {
+                transform: translateX(-2rem);
+                opacity: 0;
+            }
+
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
     }
 
 
     &__indicator {
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+        display: flex;
+        justify-content: center;
 
-        &-img {}
+
+        &-img {
+            height: calc(7rem + 6vw);
+            width: calc(7rem + 6vw);
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            object-fit: cover;
+            margin: 2vh 2vw;
+            opacity: .2;
+            border: .2rem solid var(--color-quinary);
+            cursor: pointer;
+            transition: all 1s ease;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            -o-transition: all 1s ease;
+
+
+            &.active {
+                opacity: 1;
+            }
+        }
+
     }
 }
 
