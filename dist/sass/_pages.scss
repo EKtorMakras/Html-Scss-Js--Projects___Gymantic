@@ -830,7 +830,7 @@
             -moz-transform: scale(1.1);
             -ms-transform: scale(1.1);
             -o-transform: scale(1.1);
-}
+        }
     }
 }
 
@@ -840,7 +840,43 @@
 
 //$ ---------------- Scroll-To-Top Button ---------------- $//
 
-.scroll {}
+.scroll {
+    position: fixed;
+    bottom: 80vh;
+    right: 4rem;
+    height: 5rem;
+    width: 5rem;
+    background-image: url(../img/scroll/scroll.svg);
+    background-repeat: no-repeat;
+    background-color: var(--color-secondary);
+    background-size: contain;
+    background-position: center;
+    padding: 2rem;
+    z-index: 30;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all .5s cubic-bezier(1, 0, 0, 1);
+    -webkit-transition: all .5s cubic-bezier(1, 0, 0, 1);
+    -moz-transition: all .5s cubic-bezier(1, 0, 0, 1);
+    -ms-transition: all .5s cubic-bezier(1, 0, 0, 1);
+    -o-transition: all .5s cubic-bezier(1, 0, 0, 1);
+
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        bottom: 4rem;
+    }
+
+}
 
 //$ ---------------- End Of Scroll-To-Top Button ---------------- $//
 
