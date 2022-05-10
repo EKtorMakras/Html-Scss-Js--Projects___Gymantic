@@ -718,7 +718,7 @@ p {
 }
 
 .motto {
-  background: url(../img/motto/motto-bg.jpg);
+  background-image: url(../img/motto/motto-bg.jpg);
   background-position: 50% 20%;
   grid-column: container-start/container-end;
   padding: 10rem 6rem;
@@ -1309,13 +1309,15 @@ p {
 }
 
 .register {
-  background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/register/register-bg.jpg);
+  background-image: linear-gradient(rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.3)), url(../img/register/register-bg.jpg);
   grid-column: container-start/container-end;
   color: var(--color-quinary);
   min-height: 80vh;
+  margin-top: auto;
   display: flex;
   flex-direction: column;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   gap: 4rem;
 }
 
@@ -1345,6 +1347,14 @@ p {
   -o-transition: all .5s ease-in;
 }
 
+.register__progress-step.active {
+  background-color: var(--color-quinary);
+}
+
+.register__progress-step span.active {
+  display: none;
+}
+
 .register__progress-icon {
   display: none;
   font-size: calc(1.5rem + 1vw);
@@ -1358,5 +1368,87 @@ p {
 
 .register__progress-icon.active {
   display: block;
+}
+
+.register__content {
+  width: 40rem;
+  overflow: hidden;
+}
+
+.register__form {
+  width: 400%;
+  display: flex;
+  justify-content: center;
+}
+
+.register__form-page {
+  width: 50%;
+  display: grid;
+  grid-template-rows: repeat(3, 7rem);
+  row-gap: 4rem;
+  align-items: start;
+  transition: margin .5s ease-in-out;
+  -webkit-transition: margin .5s ease-in-out;
+  -moz-transition: margin .5s ease-in-out;
+  -ms-transition: margin .5s ease-in-out;
+  -o-transition: margin .5s ease-in-out;
+}
+
+.register__form-group {
+  width: 40rem;
+}
+
+.register__form-label {
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  display: block;
+}
+
+.register__form-input, .register__form-select {
+  height: 100%;
+  width: 100%;
+  font-size: 1.7rem;
+  padding: 1rem;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: var(--color-quinary-m);
+  color: var(--color-quinary);
+  letter-spacing: 2px;
+  font-family: "Balsamiq Sans", cursive;
+  display: block;
+}
+
+.register__form-input:focus, .register__form-select:focus {
+  border: 1px solid #bcccdc;
+}
+
+.register__form-select {
+  color: #141414;
+}
+
+.register .btns {
+  display: flex;
+  gap: 2rem;
+}
+
+.register button {
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: var(--color-tertiary-m);
+  border: none;
+  color: var(--color-quinary);
+  font-size: 1.8rem;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+}
+
+.register button:hover, .register button:focus {
+  background-color: var(--color-primary-m);
 }
 /*# sourceMappingURL=style.css.map */
