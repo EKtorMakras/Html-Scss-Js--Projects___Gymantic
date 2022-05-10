@@ -886,18 +886,63 @@
 
 .register {
 
-    background-color: rgb(137, 177, 16);
+    background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/register/register-bg.jpg);
     grid-column: container-start/container-end;
+
+    @extend %bg;
+    @extend %padding-sec;
+    color: var(--color-quinary);
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 4rem;
 
 
     //% ------ Register Progress ------ //
     &__progress {
 
+        display: grid;
+        grid-template-columns: repeat(4, max-content);
+        gap: 2.5rem;
 
-        &-step {}
 
-        &-icon {}
+        &-step {
+            font-size: 2rem;
+            background-color: var(--color-tertiary-m);
+            padding: 1.2rem;
+            width: 6.5rem;
+            height: 6.5rem;
+            text-align: center;
+            position: relative;
+            transition: all .5s ease-in;
+
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            -webkit-transition: all .5s ease-in;
+            -moz-transition: all .5s ease-in;
+            -ms-transition: all .5s ease-in;
+            -o-transition: all .5s ease-in;
+        }
+
+
+        &-icon {
+            display: none;
+            font-size: font-size(regular);
+            position: absolute;
+            @include center-pos;
+
+
+            &.active {
+                display: block;
+            }
+        }
     }
+
 
 
     //% ------ Register Content ------ //

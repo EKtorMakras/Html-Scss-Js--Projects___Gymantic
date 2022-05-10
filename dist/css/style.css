@@ -192,13 +192,13 @@ p {
   text-align: center;
 }
 
-.showcase, .motto, .feature, .testimonials, .clients {
+.showcase, .motto, .feature, .testimonials, .clients, .register {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.showcase, .trainers, .testimonials, .clients {
+.showcase, .trainers, .testimonials, .clients, .register {
   padding: calc(4rem + 5vh) calc(2rem + 4vw);
 }
 
@@ -1309,7 +1309,54 @@ p {
 }
 
 .register {
-  background-color: #89b110;
+  background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/register/register-bg.jpg);
   grid-column: container-start/container-end;
+  color: var(--color-quinary);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 4rem;
+}
+
+.register__progress {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: 2.5rem;
+}
+
+.register__progress-step {
+  font-size: 2rem;
+  background-color: var(--color-tertiary-m);
+  padding: 1.2rem;
+  width: 6.5rem;
+  height: 6.5rem;
+  text-align: center;
+  position: relative;
+  transition: all .5s ease-in;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition: all .5s ease-in;
+  -moz-transition: all .5s ease-in;
+  -ms-transition: all .5s ease-in;
+  -o-transition: all .5s ease-in;
+}
+
+.register__progress-icon {
+  display: none;
+  font-size: calc(1.5rem + 1vw);
+  position: absolute;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register__progress-icon.active {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
