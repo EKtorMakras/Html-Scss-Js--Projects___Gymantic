@@ -843,9 +843,9 @@
 .scroll {
     position: fixed;
     bottom: 80vh;
-    right: 4rem;
-    height: 5rem;
-    width: 5rem;
+    right: 2.5rem;
+    height: 4rem;
+    width: 4rem;
     background-image: url(../img/scroll/scroll.svg);
     background-repeat: no-repeat;
     background-color: var(--color-secondary);
@@ -873,7 +873,7 @@
     &.active {
         visibility: visible;
         opacity: 1;
-        bottom: 4rem;
+        bottom: 2.5rem;
     }
 
 }
@@ -971,7 +971,7 @@
             display: grid;
             grid-template-rows: repeat(3, 7rem);
             row-gap: 4rem;
-            align-items: start;
+            align-items: center;
             transition: margin .5s ease-in-out;
             -webkit-transition: margin .5s ease-in-out;
             -moz-transition: margin .5s ease-in-out;
@@ -1002,7 +1002,7 @@
             border: 1px solid transparent;
             outline: none;
             background-color: var(--color-quinary-m);
-            color: var(--color-quinary);
+            color: $clr-grey-dark-3;
             letter-spacing: 2px;
             font-family: $ff-secondary;
             display: block;

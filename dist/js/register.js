@@ -45,29 +45,63 @@ let max = 4;
 
 //* ------------------------------ Events ------------------------------ *//
 
+function tick() {
+    progressStep[current - 1].classList.add('active');
+    progressNumber[current - 1].classList.add('active');
+    progressCheckmark[current - 1].classList.add('active');
+    current += 1;
+};
+
+
+function untick() {
+    progressStep[current - 2].classList.remove('active');
+    progressNumber[current - 2].classList.remove('active');
+    progressCheckmark[current - 2].classList.remove('active');
+    current -= 1;
+};
 
 //$ ---------------- Next Btns Events ---------------- $//
 
 nextBtn1.addEventListener('click', () => {
     formPage.style.marginLeft = "-33%";
+    tick();
 })
 
 nextBtn2.addEventListener('click', () => {
     formPage.style.marginLeft = "-100%";
+    tick();
 })
 
 nextBtn3.addEventListener('click', () => {
     formPage.style.marginLeft = "-200%";
+    tick();
 })
 
 //$ ---------------- Prev Btns Events ---------------- $//
 
+prevBtn1.addEventListener('click', () => {
+    formPage.style.marginLeft = "0";
+    untick();
+})
+
+prevBtn2.addEventListener('click', () => {
+    formPage.style.marginLeft = "-33%";
+    untick();
+})
+
+prevBtn3.addEventListener('click', () => {
+    formPage.style.marginLeft = "-100%";
+    untick();
+})
 
 
 //$ ---------------- Submit Btns Events ---------------- $//
 submitBtn.addEventListener('click', () => {
+
     setTimeout(() => {
         alert('Your Form Has Been Successfully Submitted');
         location.reload();
     }, 1000);
+
+    tick();
 });
